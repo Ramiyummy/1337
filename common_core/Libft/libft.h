@@ -6,7 +6,7 @@
 /*   By: rbayoumi <rbayoumi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 11:01:20 by rbayoumi          #+#    #+#             */
-/*   Updated: 2022/10/19 12:00:16 by dark             ###   ########.fr       */
+/*   Updated: 2022/10/19 12:01:22 by dark             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdio.h>
 # include <string.h>
-# include <stdlib.H>
+# include <stdlib.h>
 
 /* Libc functions prototypes */
 
