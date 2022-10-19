@@ -6,12 +6,16 @@
 /*   By: rbayoumi <rbayoumi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 11:01:20 by rbayoumi          #+#    #+#             */
-/*   Updated: 2022/10/15 11:01:31 by rbayoumi         ###   ########.fr       */
+/*   Updated: 2022/10/19 12:00:16 by dark             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# include <stdio.h>
+# include <string.h>
+# include <stdlib.H>
 
 /* Libc functions prototypes */
 
