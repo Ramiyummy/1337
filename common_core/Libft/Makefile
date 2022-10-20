@@ -36,7 +36,7 @@ $(NAME): $(OBJ)
 #bounty: $(BOBJ) $(NAME)
 #	@$(AR) $(NAME) $(BOBJ)
 
-%.o : %.c
+%.o : %.c libft.h
 	@$(CC) -c $(POLICE) $< -o $@
 
 clean:
