@@ -6,7 +6,7 @@
 /*   By: rbayoumi <rbayoumi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 17:05:13 by rbayoumi          #+#    #+#             */
-/*   Updated: 2022/10/20 18:42:32 by rbayoumi         ###   ########.fr       */
+/*   Updated: 2022/10/26 23:15:02 by rbayoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	i = 0;
 	j = 0;
-	if (size == 0)
-	{
-		return (-1);
-	}
+
 	lenght_src = ft_strlen(src);
 	lenght_dst = ft_strlen(dst);
 	j = lenght_dst;
