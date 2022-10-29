@@ -6,7 +6,7 @@
 /*   By: rbayoumi <rbayoumi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:17:31 by rbayoumi          #+#    #+#             */
-/*   Updated: 2022/10/25 15:18:45 by rbayoumi         ###   ########.fr       */
+/*   Updated: 2022/10/28 16:19:03 by rbayoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	i = 0;
 	len = ft_strlen(s1) - 1;
+	if (*s1 == '\0')
+		return (ft_strdup(""));
 	while (s1[i] && skip_set(s1[i], set))
 		i++;
 	while (s1[len] && skip_set(s1[len], set))
@@ -43,3 +45,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_substr(s1, i, 0));
 	return (ft_substr(s1, i, (len - i + 1)));
 }
+rb
