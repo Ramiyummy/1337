@@ -6,13 +6,13 @@
 /*   By: rbayoumi <rbayoumi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:40:54 by rbayoumi          #+#    #+#             */
-/*   Updated: 2022/10/25 23:27:37 by rbayoumi         ###   ########.fr       */
+/*   Updated: 2022/10/29 12:22:53 by rbayoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	words_num(const char *str, char sep)
+static int	word_num(const char *str, char sep)
 {
 	int	i;
 	int	num;
@@ -25,7 +25,7 @@ static int	words_num(const char *str, char sep)
 			i++;
 		if (str[i])
 		{
-			while (str[i] != sep)
+			while (str[i] && str[i] != sep)
 				i++;
 			num += 1;
 		}
@@ -33,7 +33,7 @@ static int	words_num(const char *str, char sep)
 	return (num);
 }
 
-static int	words_len(const char *str, int  index, char sep)
+static int	word_len(const char *str, int index, char sep)
 {
 	int	cntr;
 
@@ -46,37 +46,30 @@ static int	words_len(const char *str, int  index, char sep)
 	return (cntr);
 }
 
-char **ft_split(char const *str, char c)
+char	**ft_split(char const *str, char c)
 {
-	int	i;
-	int	j;
-	int	k;
-	char **split;
+	int		w_num;
+	int		w_lenght;
+	int		i;
+	int		j;
+	char	**split;
 
 	i = 0;
 	j = 0;
-	split = (char **)malloc((words_num(str, c) + 1) * sizeof(char *));
+	if (!str)
+		return (NULL);
+	w_num = word_num(str, c);
+	split = (char **)malloc((w_num + 1) * sizeof(char *));
 	if (!split)
 		return (NULL);
-	while (str[i])
+	while (j < w_num)
 	{
-		k = 0;
 		while (str[i] == c)
 			i++;
-		if (str[i])
-		{
-			split[j] = (char *)malloc((words_len(str, i, c) + 1) * sizeof(char));
-			if (!split[j])
-				return (NULL);
-			while (str[i] && str[i] != c)
-			{
-				split[j][k] = str[i];
-				i++;
-				k++;
-			}
-			split[j][k] = '\0';
-			j++;
-		}
+		w_lenght = word_len(str, i, c);
+		split[j] = ft_substr(str, i, w_lenght);
+		i += w_lenght;
+		j++;
 	}
 	split[j] = NULL;
 	return (split);
