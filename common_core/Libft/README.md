@@ -4,4 +4,4 @@
 
 # useful links
 
-> https://www.geeksforgeeks.org/input-output-system-calls-c-create-open-close-read-write/#:~:text=What%20is%20the%20File%20Descriptor,pointers%20to%20file%20table%20entries.
+>Input-output system calls in C | Create, Open, Close, Read, Write: https://www.geeksforgeeks.org/input-output-system-calls-c-create-open-close-read-write/#:~:text=What%20is%20the%20File%20Descriptor,pointers%20to%20file%20table%20entries.
