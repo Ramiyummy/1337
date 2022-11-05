@@ -6,13 +6,14 @@
 /*   By: rbayoumi <rbayoumi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 08:56:09 by rbayoumi          #+#    #+#             */
-/*   Updated: 2022/10/31 08:56:54 by rbayoumi         ###   ########.fr       */
+/*   Updated: 2022/11/05 16:14:21 by rbayoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_char(char c)
+int	ft_char(char c)
 {
 	write(1, &c, sizeof(char));
+	return (1);
 }
