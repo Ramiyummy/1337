@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str.c                                           :+:      :+:    :+:   */
+/*   ft_little_hexa.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbayoumi <rbayoumi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 08:25:42 by rbayoumi          #+#    #+#             */
-/*   Updated: 2022/11/06 07:15:31 by dark             ###   ########.fr       */
+/*   Created: 2022/11/05 13:11:47 by rbayoumi          #+#    #+#             */
+/*   Updated: 2022/11/05 18:17:35 by rbayoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_str(char *s)
+int	ft_little_hexa(unsigned int num)
 {
-	int	i;
+	int		printed;
+	char	*arr;
 
-	i = 0;
-	if (!s)
+	printed = 0;
+	arr = "0123456789abcdef";
+	if (num <= 15)
 	{
-		ft_str("(null)");
-		return (6);
+		printed += ft_char(arr[num]);
 	}
-	while (*(s + i) != '\0')
+	else
 	{
-		write(1, (s + i), sizeof(char));
-		i++;
+		printed += ft_little_hexa(num / 16);
+		printed += ft_little_hexa(num % 16);
 	}
-	return (i);
+	return (printed);
 }
