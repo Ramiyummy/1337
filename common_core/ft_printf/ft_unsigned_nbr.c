@@ -19,11 +19,11 @@ int	ft_unsigned_nbr(unsigned int n)
 	printed = 0;
 	if (n < 10)
 	{
-		printed += ft_char(n + '0');
+		printed = ft_char(n + '0');
 	}
 	else
 	{
-		printed += ft_unsigned_nbr(n / 10);
+		printed = ft_unsigned_nbr(n / 10);
 		printed += ft_unsigned_nbr(n % 10);
 	}
 	return (printed);
