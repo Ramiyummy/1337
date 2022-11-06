@@ -21,11 +21,11 @@ int	ft_big_hexa(unsigned int num)
 	arr = "0123456789ABCDEF";
 	if (num <= 15)
 	{
-		printed += ft_char(arr[num]);
+		printed = ft_char(arr[num]);
 	}
 	else
 	{
-		printed += ft_big_hexa(num / 16);
+		printed = ft_big_hexa(num / 16);
 		printed += ft_big_hexa(num % 16);
 	}
 	return (printed);
