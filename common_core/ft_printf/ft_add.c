@@ -21,11 +21,11 @@ int	ft_add(unsigned long int num)
 	printed = 0;
 	if (num <= 15)
 	{
-		printed += ft_char(arr[num]);
+		printed = ft_char(arr[num]);
 	}
 	else
 	{
-		printed += ft_add(num / 16);
+		printed = ft_add(num / 16);
 		printed += ft_add(num % 16);
 	}
 	return (printed);
