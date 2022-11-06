@@ -21,16 +21,16 @@ int	ft_nbr(int n)
 	printed = 0;
 	if (n < 0)
 	{
-		printed += ft_char('-');
+		printed = ft_char('-');
 		nb *= -1;
 	}
 	if (nb < 10)
 	{
-		printed += ft_char(nb + '0');
+		printed = ft_char(nb + '0');
 	}
 	else
 	{
-		printed += ft_nbr(nb / 10);
+		printed = ft_nbr(nb / 10);
 		printed += ft_nbr(nb % 10);
 	}
 	return (printed);
