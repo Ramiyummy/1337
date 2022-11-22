@@ -6,7 +6,7 @@
 /*   By: rbayoumi <rbayoumi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 07:51:59 by rbayoumi          #+#    #+#             */
-/*   Updated: 2022/11/18 11:54:08 by rbayoumi         ###   ########.fr       */
+/*   Updated: 2022/11/22 16:42:34 by rbayoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,21 +66,19 @@ char	*ft_strjoin(char *father, char *mother)
 	{
 		baby[i++] = mother[j++];
 	}
-	baby[i] = '\0';
-	free(fahter);
 	return (baby);
 }
 
-char	*get_dline(char *leftover)
+char	*get_dline(char *f_draft)
 {
-	if (!leftover)
+	if (!f_draft)
 		return (NULL);
 	int		i;
 	char	*dline;
 
 	i = 0;
 	dline = "";
-	while (leftover[i] && leftover[i] != '\n')
+	while (f_draft[i] && f_draft[i] != '\n')
 	{
 		i++;
 	}
@@ -88,13 +86,21 @@ char	*get_dline(char *leftover)
 	if (!dline)
 		return (NULL);
 	i = 0;
-	while (leftover[i] && leftover[i] != '\n')
+	while (f_draft[i] && f_draft[i] != '\n')
 	{
-		dline[i] = leftover[i];
+		dline[i] = f_draft[i];
 		i++;
 	}
-	if (leftover[i] == '\n')
+	if (f_draft[i] == '\n')
 		dline[i++] = '\n';
 	dline[i] = '\0';
 	return (dline);
 }
+/*
+char	*final_draft(char *smt)
+{
+	char	*cleaned;
+
+	return (cleaned);
+}
+*/
