@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbayoumi <rbayoumi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 07:51:59 by rbayoumi          #+#    #+#             */
-/*   Updated: 2022/11/22 16:42:34 by rbayoumi         ###   ########.fr       */
+/*   Created: 2022/11/23 08:31:36 by rbayoumi          #+#    #+#             */
+/*   Updated: 2022/11/23 15:55:57 by rbayoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
+	if (!s)
+		return (0);
 	while (*s != '\0')
 	{
 		s++;
@@ -30,6 +32,8 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	while (*(s + i) != '\0')
 	{
 		if (*(s + i) == (char)c)
@@ -45,39 +49,40 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-
 char	*ft_strjoin(char *father, char *mother)
 {
-	int		i;
-	int		j;
+	int		x;
+	int		y;
 	char	*baby;
+	int		len;
 
-	i = 0;
-	j = 0;
-	baby = (char *)malloc((ft_strlen(mother) + ft_strlen(father)) * sizeof(char) + 1);
+	len = ((ft_strlen(mother) + ft_strlen(father)) * sizeof(char) + 1);
+	x = 0;
+	y = 0;
+	baby = (char *)malloc(len);
 	if (!baby)
 		return (NULL);
-	while (father && father[i])
+	while (father && father[x])
 	{
-		baby[i] = father[i];
-		i++;
+		baby[x] = father[x];
+		x++;
 	}
-	while (mother[j])
+	while (mother[y])
 	{
-		baby[i++] = mother[j++];
+		baby[x++] = mother[y++];
 	}
+	free(father);
 	return (baby);
 }
 
 char	*get_dline(char *f_draft)
 {
-	if (!f_draft)
-		return (NULL);
 	int		i;
 	char	*dline;
 
+	if (!f_draft)
+		return (NULL);
 	i = 0;
-	dline = "";
 	while (f_draft[i] && f_draft[i] != '\n')
 	{
 		i++;
@@ -96,11 +101,8 @@ char	*get_dline(char *f_draft)
 	dline[i] = '\0';
 	return (dline);
 }
-/*
-char	*final_draft(char *smt)
-{
-	char	*cleaned;
 
-	return (cleaned);
+char	*final_draft(char *f_draft)
+{
+	f_draft++;
 }
-*/
