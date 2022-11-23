@@ -6,7 +6,7 @@
 /*   By: rbayoumi <rbayoumi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 08:31:36 by rbayoumi          #+#    #+#             */
-/*   Updated: 2022/11/23 15:55:57 by rbayoumi         ###   ########.fr       */
+/*   Updated: 2022/11/23 17:30:28 by rbayoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,29 @@ char	*get_dline(char *f_draft)
 	return (dline);
 }
 
-char	*final_draft(char *f_draft)
+char	*final_draft(char *first_d)
 {
-	f_draft++;
+	char	*final_d;
+	int		i;
+	int		j;
+
+	i = 0;
+	while (first_d[i] && first_d[i] != '\n')
+		i++;
+	if (!first_d[i])
+	{
+		free(first_d);
+		return (NULL);
+	}
+	final_d = malloc((ft_strlen(first_d) - i + 1) * sizeof(char));
+	i++;
+	j = 0;
+	while (first_d[i])
+	{
+		final_d[j] = first_d[i];
+		j++;
+		i++;
+	}
+	free(first_d);
+	return (final_d);
 }
