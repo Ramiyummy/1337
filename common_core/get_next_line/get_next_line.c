@@ -6,51 +6,50 @@
 /*   By: rbayoumi <rbayoumi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 08:32:12 by rbayoumi          #+#    #+#             */
-/*   Updated: 2022/11/23 15:51:51 by rbayoumi         ###   ########.fr       */
+/*   Updated: 2022/11/23 17:31:20 by rbayoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <stdio.h>
 
-char	*first_draft(int fd, char *f_draft)
+char	*first_draft(int fd, char *first_d)
 {
 	int		nr;
 	char	buffer[BUFFER_SIZE + 1];
 
 	nr = 1;
-	while (!ft_strchr(f_draft, '\n') && nr > 0)
+	while (!ft_strchr(first_d, '\n') && nr > 0)
 	{
 		nr = read(fd, buffer, BUFFER_SIZE);
 		if (nr <= 0)
-			return (f_draft);
+			return (first_d);
 		buffer[nr] = '\0';
-		f_draft = ft_strjoin(f_draft, buffer);
+		first_d = ft_strjoin(first_d, buffer);
 	}
-	return (f_draft);
+	return (first_d);
 }
 
 char	*get_next_line(int fd)
 {
 	char			*dline;
-	char static		*f_draft;
+	char static		*first_d;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	f_draft = first_draft(fd, f_draft);
-	dline = get_dline(f_draft);
-//	f_draft = final_draft(f_draft);
-	return (f_draft);
+	first_d = first_draft(fd, first_d);
+	dline = get_dline(first_d);
+	first_d = final_draft(first_d);
+	return (dline);
 }
-#include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	int	fd, i;
 
 	i = 0;
 	fd = open("rami.txt", O_RDONLY);
-	while (i < 1)
+	while (i < 5)
 	{
 		printf("%s", get_next_line(fd));
 		i++;
