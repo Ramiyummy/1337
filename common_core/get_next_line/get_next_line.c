@@ -33,7 +33,7 @@ char	*first_draft(int fd, char *first_d)
 char	*get_next_line(int fd)
 {
 	char			*dline;
-	char static		*first_d;
+	static char		*first_d;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
