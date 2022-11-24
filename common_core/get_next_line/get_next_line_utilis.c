@@ -6,7 +6,7 @@
 /*   By: rbayoumi <rbayoumi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 08:31:36 by rbayoumi          #+#    #+#             */
-/*   Updated: 2022/11/24 13:02:10 by rbayoumi         ###   ########.fr       */
+/*   Updated: 2022/11/24 15:16:54 by rbayoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ char	*get_dline(char *first_d)
 	int		i;
 	char	*dline;
 
-	if(!first_d)
+	if (!first_d)
 		return (NULL);
 	i = 0;
 	while (first_d[i] && first_d[i] != '\n')
@@ -111,7 +111,7 @@ char	*final_draft(char *first_d)
 		return (NULL);
 	while (first_d[i] && first_d[i] != '\n')
 		i++;
-	if (!first_d[i])
+	if (!first_d[i] || (first_d[i] == '\n' && first_d[i + 1] == '\0'))
 	{
 		free(first_d);
 		return (NULL);
