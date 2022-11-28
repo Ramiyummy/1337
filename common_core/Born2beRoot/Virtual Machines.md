@@ -1,0 +1,11 @@
+### What Is A Virtual Machine?
+
+A virtual machine (VM) is a virtual environment that works like a computer withing a computer. It runs on an isolated partition of its host computer with its own CPU power, memory, operating system(such as Windows, Linux, macOS), and other resources. End users can run applications on VMs and use them as they normally would on their workstation.
+
+### How do virtual machines work?
+
+Virtual machines are made possible through [[virtualization]] technology. Virtualization uses software to simulate virtual hardware that allows multiple VMs to run on a single machine. The physical machine is known as the host while the VMs running on it are called guests.
+
+This process is managed by software known as a [[hypervisor]]. The hypervisor is responsible for managing and provisioning resources—like memory and storage—from the host to guests. It also schedules operations in VMs so they don’t overrun each other when using resources. VMs only work if there is a hypervisor to virtualize and distribute host resources. **There are two types of hypervisors used in virtualization:**
+- Type 1 hypervisors (also known as bare metal hypervisors) are installed natively on the underlying physical hardware. VMs interact directly with hosts to allocate hardware resources without any extra software layers in between. Host machines running type 1 hypervisors are used only for virtualization. They’re often found in server-based environments like enterprise datacenters. Some examples of type 1 hypervisors include Citrix Hypervisor and Microsoft Hyper-V. A separate management tool is needed to handle guest activities like creating new virtual machine instances or managing permissions.
+- Type 2 hypervisors (also called hosted hypervisors) run on the host computer’s operating system. Hosted hypervisors pass VM requests to the host operating system, which then provisions the appropriate physical resources to each guest. Type 2 hypervisors are slower than their type 1 counterparts as every VM action has to go through the host operating system first. Unlike bare-metal hypervisors, guest operating systems are not tied to physical hardware. Users can run VMs and use their computer systems as usual. This makes type 2 hypervisors suitable for personal users or small businesses that don’t have dedicated servers for virtualization.

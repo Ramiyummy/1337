@@ -1,0 +1,10 @@
+### What is a hypervisor?
+
+A hypervisor is software that creates and runs virtual machines (VMs), which are software emulations of a computing hardware environment. Sometimes called a virtual machine monitor (VMM), the hypervisor isolates the operating system and computing resources from the virtual machines and enables the creation and management of those VMs. These virtual machines—simply, code operating in a server's memory space—enable administrators to have a dedicated machine for every service they need to run.
+
+This small software layer is the most important component of virtualization technology, which comprises storage, desktop, operating system (OS), and application virtualization. Hypervisors also make server virtualization possible by allowing different operating systems to run separate applications on a single server while still using the same physical hardware resources. Virtualization is the basis of modern [[cloud computing]], enabling scalability, security, and management of global IT infrastructure.
+
+### How do hypervisors work?
+
+Hypervisors create a virtualization layer that runs between the OS and server hardware rather than between the OS and application. They isolate operating systems and applications from the underlying computer hardware, or the host machine, from the virtual machines that use its resources. By concealing the actual hardware resources of the physical server from the partitioned VMs, the hypervisor implies a common pool of shared resources, including CPU, storage, and memory, that can be shared among the guest VMs.
+The hypervisor is then responsible for managing and provisioning pooled resources from the host’s hardware to guest VMs and for scheduling operations so VMs don’t overrun one another when using resources. By virtualizing and distributing host resources, the hypervisor enables the function of guest VMs, making them independent of the host hardware and enabling them to run their own programs.
