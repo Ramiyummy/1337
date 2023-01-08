@@ -6,7 +6,7 @@
 /*   By: rbayoumi <rbayoumi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 07:16:48 by rbayoumi          #+#    #+#             */
-/*   Updated: 2023/01/07 18:31:32 by rbayoumi         ###   ########.fr       */
+/*   Updated: 2023/01/08 15:12:22 by rbayoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ void send_bit(int pid, char c)
 	int i;
 	int mask;
 
-	mask = 0b10000000;
+	mask = 0b0000001;
 	i = 0;
-	while ( i <= 7)
+	while (i <= 7)
 	{
 		if (c & mask)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
 		usleep(100);
+		mask <<= 1;
 		i++;
-		mask >>= 1;
 	}
 }
 
